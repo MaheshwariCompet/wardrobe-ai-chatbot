@@ -2,7 +2,6 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Wardrobe Dual-Engine Chatbot API",
-    "description": "Conversational assistant with Offline Pandas analytics and Gemini Grounded RAG",
     "version": "4.0.0"
   },
   "paths": {
@@ -13,7 +12,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/ChatRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
             }
           },
           "required": true
@@ -23,7 +24,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ChatResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
               }
             }
           },
@@ -31,7 +34,9 @@
             "description": "Validation Error",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
               }
             }
           }
@@ -45,7 +50,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/ChatRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
             }
           },
           "required": true
@@ -55,7 +62,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/ChatResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
               }
             }
           },
@@ -63,7 +72,9 @@
             "description": "Validation Error",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
               }
             }
           }
@@ -75,47 +86,82 @@
     "schemas": {
       "ChatRequest": {
         "properties": {
-          "message": { "type": "string", "title": "Message" },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
           "scenario_context": {
-            "anyOf": [{ "type": "string" }, { "type": "null" }],
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Scenario Context",
             "default": "Normal Daily Wear"
           }
         },
         "type": "object",
-        "required": ["message"],
+        "required": [
+          "message"
+        ],
         "title": "ChatRequest"
       },
       "ChatResponse": {
         "properties": {
-          "engine": { "type": "string", "title": "Engine" },
-          "reply": { "type": "string", "title": "Reply" },
+          "engine": {
+            "type": "string",
+            "title": "Engine"
+          },
+          "reply": {
+            "type": "string",
+            "title": "Reply"
+          },
           "cards": {
             "anyOf": [
               {
-                "items": { "additionalProperties": true, "type": "object" },
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
                 "type": "array"
               },
-              { "type": "null" }
+              {
+                "type": "null"
+              }
             ],
             "title": "Cards"
           },
           "bullets": {
             "anyOf": [
-              { "items": { "type": "string" }, "type": "array" },
-              { "type": "null" }
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
             ],
             "title": "Bullets"
           }
         },
         "type": "object",
-        "required": ["engine", "reply"],
+        "required": [
+          "engine",
+          "reply"
+        ],
         "title": "ChatResponse"
       },
       "HTTPValidationError": {
         "properties": {
           "detail": {
-            "items": { "$ref": "#/components/schemas/ValidationError" },
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
             "type": "array",
             "title": "Detail"
           }
@@ -126,17 +172,41 @@
       "ValidationError": {
         "properties": {
           "loc": {
-            "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] },
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
             "type": "array",
             "title": "Location"
           },
-          "msg": { "type": "string", "title": "Message" },
-          "type": { "type": "string", "title": "Error Type" },
-          "input": { "title": "Input" },
-          "ctx": { "type": "object", "title": "Context" }
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
         },
         "type": "object",
-        "required": ["loc", "msg", "type"],
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
         "title": "ValidationError"
       }
     }
