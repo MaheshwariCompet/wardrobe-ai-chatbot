@@ -45,13 +45,14 @@ npm run dev
 "Which past outfits were uncomfortable to avoid?"
 "Can you tell the top 5 of tops fits for Navy wide-leg bottom?"
 
-# 6.📖 Interactive Swagger API Documentation
+# 6. Interactive Swagger API Documentation
 
 This project includes standalone Swagger UI documentation bundled inside the [`docs/`](./docs) directory.
 
 ![Swagger UI Preview](./docs/swagger-ui-preview.png)
 
 ### Viewing the Swagger UI:
-1. **GitHub Pages (Live in Browser):** Go to your repo **Settings > Pages > Branch: `main` > Folder: `/docs`** to host the interactive Swagger UI online for free.
-2. **Local Static View:** Open [`docs/index.html`](./docs/index.html) directly in any web browser.
-3. **Live FastAPI Backend:** Start `python main.py` in `backend/` and visit `http://127.0.0.1:8000/docs`.
+1. **Live Swagger UI (Recommended):** Access the interactive API docs directly in your browser at [https://maheshwaricompet.github.io/wardrobe-ai-chatbot/#/](https://maheshwaricompet.github.io/wardrobe-ai-chatbot/#/).
+2. **GitHub Pages (Live in Browser):** Go to your repo **Settings > Pages > Branch: `main` > Folder: `/docs`** to host the interactive Swagger UI online for free.
+3. **Local Static View:** Open [`docs/index.html`](./docs/index.html) directly in any web browser.
+4. **Live FastAPI Backend:** Start `python main.py` in `backend/` and visit `http://127.0.0.1:8000/docs`.
